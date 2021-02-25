@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: $primary-font-size;
+  font-weight: $regular;
+  letter-spacing: 0.5px;
+  @include getIdealLineHeight($primary-font-size);
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(to bottom right, #7a5cff 0%, #3cd644 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  user-select: none;
+}
+
+main {
+  height: 100%;
+  @include display-flex;
+  @include align-items(center);
+}
