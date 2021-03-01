@@ -6,7 +6,7 @@ import Numbers from './components/layout/Numbers'
 const App = () => {
   return (
     <div className="calculator">
-      <Result value={'1'} />
+      <Result value={'0'} />
       <Numbers />
 
       <div className="calculator__functions">
