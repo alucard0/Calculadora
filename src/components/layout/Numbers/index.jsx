@@ -4,7 +4,7 @@ import Button from '../../shared/Button'
 
 const renderButtons = clickNumber => {
   const numbers = [1,2,3,4,5,6,7,8,9,0]
-  return numbers.map( (number,index) => <Button text={`${number}`} clickHandler={clickNumber} key={index} />)
+  return numbers.map( number => <Button text={`${number}`} clickHandler={clickNumber} key={number} />)
 }
 
 const Numbers = ({clickNumber}) => <div className="calculator__numbers">{renderButtons(clickNumber)}</div>

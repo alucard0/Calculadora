@@ -5,11 +5,11 @@ import Button from '../../shared/Button'
 
 const renderButtons =(clickOperation, clickEqual) =>{
   const symbols = ["+","-","*","/","="]
-  return symbols.map((symbol,index)=> {
+  return symbols.map(symbol=> {
     if(symbol==='='){
-      return <Button text={symbol} clickHandler={clickEqual} key={index}/>
+      return <Button text={symbol} clickHandler={clickEqual} key={symbol}/>
     } else {
-      return <Button text={symbol}clickHandler={clickOperation} key={index} />
+      return <Button text={symbol}clickHandler={clickOperation} key={symbol} />
     }
   })
 }
