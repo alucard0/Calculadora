@@ -4,6 +4,14 @@ import Result from './components/shared/Result'
 import Numbers from './components/layout/Numbers'
 import MathOperations from './components/layout//MathOperations'
 
+const clickOperation = (operation) => {
+  console.log('Operation', operation)
+}
+
+const clickEqual = (equal) => {
+  console.log('Equal', equal)
+}
+
 const App = () => {
   return (
     <div className="calculator">
@@ -14,7 +22,7 @@ const App = () => {
         <button>clear</button>
         <button>r</button>
       </div>
-      <MathOperations />
+      <MathOperations clickOperation={clickOperation} clickEqual={clickEqual} />
     </div>
   )
 }
