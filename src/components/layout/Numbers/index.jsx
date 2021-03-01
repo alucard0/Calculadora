@@ -1,11 +1,8 @@
 import React from 'react'
+import PropTypes  from 'prop-types'
 import Button from '../../shared/Button'
 
-const clickNumber = (text) => {
-  console.log('Button', text)
-}
-
-const buildNumbers = () => {
+const buildNumbers = ({clickNumber}) => {
   const numbers = []
   for (let index = 1; index < 10; index++) {
     numbers.push(<Button text={`${index}`} key={index} clickHandler={clickNumber} />)
@@ -14,6 +11,14 @@ const buildNumbers = () => {
   return numbers
 }
 
-const Numbers = () => <div className="calculator__numbers">{buildNumbers()}</div>
+const Numbers = (props) => <div className="calculator__numbers">{buildNumbers(props)}</div>
+
+Numbers.propTypes ={
+  clickNumber: PropTypes.func.isRequired
+}
+Numbers.defaultProps ={
+  clickNumber: ()=>{}
+ }
+
 
 export default Numbers

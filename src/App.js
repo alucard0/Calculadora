@@ -21,11 +21,15 @@ const onDelete = () => {
   console.log('Delete')
 }
 
+const clickNumber = (text) => {
+  console.log('Button', text)
+}
+
 const App = () => {
   return (
     <div className="calculator">
       <Result value={'0'} />
-      <Numbers />
+      <Numbers clickNumber={clickNumber} />
       <Functions onContentClear={onContentClear} onDelete={onDelete} />
       <MathOperations clickOperation={clickOperation} clickEqual={clickEqual} />
     </div>
