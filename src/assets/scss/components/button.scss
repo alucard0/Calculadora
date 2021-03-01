@@ -1,4 +1,4 @@
-button {
+.button {
   padding: 16px;
   font-size: 20px;
   line-height: 1;
@@ -11,5 +11,8 @@ button {
   &:hover {
     color: #00a3f5;
     border: 1px solid #ffce5c22;
+  }
+  &--long-text {
+    font-size: 14px;
   }
 }

@@ -4,7 +4,7 @@ import Button from '../../shared/Button'
 
 const Functions = ({ onContentClear, onDelete }) => (
   <section className="calculator__functions">
-    <Button text="clear" clickHandler={onContentClear} />
+    <Button type='button--long-text' text="clear" clickHandler={onContentClear} />
     <Button text="r" clickHandler={onDelete} />
   </section>
 )

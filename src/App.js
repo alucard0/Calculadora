@@ -26,7 +26,6 @@ const App = () => {
     <div className="calculator">
       <Result value={'0'} />
       <Numbers />
-
       <Functions onContentClear={onContentClear} onDelete={onDelete} />
       <MathOperations clickOperation={clickOperation} clickEqual={clickEqual} />
     </div>
