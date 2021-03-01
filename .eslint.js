@@ -15,7 +15,7 @@ module.exports = {
     'jsx-quotes': [2, 'prefer-double'],
     quotes: ['error', 'single'],
     'quote-props': ['error', 'as-needed'],
-    'max-len': ["error", { "code": 80 }]
+    'max-len': ["error", { "code": 80, "tabWidth": 2,"comments": 65 }]
   },
   env: {
     'jest': true,
