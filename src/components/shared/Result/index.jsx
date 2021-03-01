@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Result = ({ value }) => 
+const Result = ({ value }) => (
   <div className="calculator__result">
     <span>{value}</span>
   </div>
-
+)
 
 Result.propTypes = {
   value: PropTypes.string.isRequired,
