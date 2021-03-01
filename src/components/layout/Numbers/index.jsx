@@ -12,6 +12,7 @@ const Numbers = ({clickNumber}) => <div className="calculator__numbers">{renderB
 Numbers.propTypes ={
   clickNumber: PropTypes.func.isRequired
 }
+
 Numbers.defaultProps ={
   clickNumber: ()=>{}
  }
