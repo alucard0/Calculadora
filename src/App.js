@@ -2,6 +2,7 @@ import React from 'react'
 import './assets/scss/main.scss'
 import Result from './components/shared/Result'
 import Numbers from './components/layout/Numbers'
+import MathOperations from './components/layout//MathOperations'
 
 const App = () => {
   return (
@@ -13,13 +14,7 @@ const App = () => {
         <button>clear</button>
         <button>r</button>
       </div>
-      <div className="calculator__math-operations">
-        <button>+</button>
-        <button>-</button>
-        <button>*</button>
-        <button>/</button>
-        <button>=</button>
-      </div>
+      <MathOperations />
     </div>
   )
 }
