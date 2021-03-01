@@ -2,13 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../../shared/Button'
 
+
+const renderButtons =(clickOperation, clickEqual) =>{
+  const symbols = ["+","-","*","/","="]
+  return symbols.map((symbol,index)=> {
+    if(symbol==='='){
+      return <Button text={symbol} clickHandler={clickEqual} key={index}/>
+    } else {
+      return <Button text={symbol}clickHandler={clickOperation} key={index} />
+    }
+  })
+}
 const MathOperations =({clickOperation, clickEqual}) => (
   <section className="calculator__math-operations">
-    <Button text="+" clickHandler={clickOperation} />
-    <Button text="-" clickHandler={clickOperation} />
-    <Button text="*" clickHandler={clickOperation} />
-    <Button text="/" clickHandler={clickOperation} />
-    <Button text="=" clickHandler={clickEqual} />
+    {renderButtons(clickOperation, clickEqual)}
   </section>
 )
 
@@ -22,4 +29,3 @@ MathOperations.propTypes ={
  }
 
  export default MathOperations
- 

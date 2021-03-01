@@ -2,16 +2,12 @@ import React from 'react'
 import PropTypes  from 'prop-types'
 import Button from '../../shared/Button'
 
-const renderButtons = ({clickNumber}) => {
-  const numbers = []
-  for (let index = 1; index < 10; index++) {
-    numbers.push(<Button text={`${index}`} key={index} clickHandler={clickNumber} />)
-  }
-  numbers.push(<Button text="0" clickHandler={clickNumber} key={0} />)
-  return numbers
+const renderButtons = clickNumber => {
+  const numbers = [1,2,3,4,5,6,7,8,9,0]
+  return numbers.map( (number,index) => <Button text={`${number}`} clickHandler={clickNumber} key={index} />)
 }
 
-const Numbers = (props) => <div className="calculator__numbers">{renderButtons(props)}</div>
+const Numbers = ({clickNumber}) => <div className="calculator__numbers">{renderButtons(clickNumber)}</div>
 
 Numbers.propTypes ={
   clickNumber: PropTypes.func.isRequired
