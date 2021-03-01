@@ -1,16 +1,16 @@
 import React from 'react'
 import Button from '../../shared/Button'
 
-const clickHandler = (text) => {
+const clickNumber = (text) => {
   console.log('Button', text)
 }
 
 const buildNumbers = () => {
   const numbers = []
   for (let index = 1; index < 10; index++) {
-    numbers.push(<Button text={`${index}`} key={index} clickHandler={clickHandler} />)
+    numbers.push(<Button text={`${index}`} key={index} clickHandler={clickNumber} />)
   }
-  numbers.push(<Button text="0" clickHandler={clickHandler} key={0} />)
+  numbers.push(<Button text="0" clickHandler={clickNumber} key={0} />)
   return numbers
 }
 
