@@ -1,6 +1,5 @@
 /* eslint no-eval: 0 */
 import React, { useState } from 'react'
-import words from 'lodash.words'
 import './assets/scss/main.scss'
 import Result from './components/shared/Result'
 import Numbers from './components/layout/Numbers'
@@ -9,20 +8,29 @@ import Functions from './components/layout/Functions'
 
 const App = () => {
   const [stack, setStack] = useState('')
-  const items = words(stack, /[^-^+^*^/]+/g)
-  const lastItem = items.length > 0 ? items[items.length - 1] : '0'
 
   const clickNumber = (number) => {
     setStack(`${stack}${number}`)
   }
 
+  const lastCharacterIsNumber = () => {
+    const lastCharacter = stack.charAt(stack.length - 1)
+    return /[0-9]/.test(lastCharacter)
+  }
+
   const clickOperation = (operation) => {
-    setStack(`${stack}${operation}`)
+    if (lastCharacterIsNumber()) {
+      setStack(`${stack}${operation}`)
+    }
   }
 
   const clickEqual = () => {
-    const result = eval(stack)
-    setStack(`${result}`)
+    if (lastCharacterIsNumber()) {
+      const result = eval(stack)
+      setStack(`${result}`)
+    } else {
+      onDelete()
+    }
   }
 
   const onContentClear = () => {
@@ -38,7 +46,7 @@ const App = () => {
 
   return (
     <div className="calculator">
-      <Result value={lastItem} />
+      <Result value={stack} />
       <Numbers clickNumber={clickNumber} />
       <Functions onContentClear={onContentClear} onDelete={onDelete} />
       <MathOperations clickOperation={clickOperation} clickEqual={clickEqual} />
