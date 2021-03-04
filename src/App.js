@@ -1,4 +1,4 @@
-/* eslint no-eval: 0 */
+/* eslint no-new-func: 0 */
 import React, { useState } from 'react'
 import './assets/scss/main.scss'
 import Result from './components/shared/Result'
@@ -26,7 +26,7 @@ const App = () => {
 
   const clickEqual = () => {
     if (lastCharacterIsNumber()) {
-      const result = eval(stack)
+      const result = new Function('return ' + stack)()
       setStack(`${result}`)
     } else {
       onDelete()
