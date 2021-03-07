@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Button from '../../shared/Button'
 
 const renderButtons = (clickNumber) => {
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+  const numbers = [7,8,9,4,5,6,1,2,3,0]
 
   return numbers.map((number) => (
     <Button text={`${number}`} clickHandler={clickNumber} key={number} />
